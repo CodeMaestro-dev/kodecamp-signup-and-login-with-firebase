@@ -466,8 +466,9 @@ export default function Dashboard() {
                 className="bg-[#F9FBFF] w-full  min-[940px]:w-fit rounded-[12px] p-[16px] border border-[#F9FBFF] focus:outline-none text-black focus:border focus:border-[#5932EA] placeholder:text-[#1A0710A6]"
               >
                 <option>Short by: Newest</option>
-                <option value="country">country</option>
-                <option value="email">email</option>
+                <option value="country">Country</option>
+                <option value="email">Email</option>
+                <option value="work">Place of Work</option>
               </select>
             </div>
           </div>

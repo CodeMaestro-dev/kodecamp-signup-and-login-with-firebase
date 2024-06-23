@@ -44,51 +44,53 @@ export default function Dashboard() {
 
   return (
     <div className="col-start-1 col-end-12 bg-[#F8FAFF] grid grid-cols-11 w-full">
-
-      <div className="block md:hidden cursor-pointer absolute top-8 right-8" onClick={SET_SHOW}>
-          {!show ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              />
-            </svg>
-          ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          )}
-        </div>
+      <div
+        className="block md:hidden cursor-pointer absolute top-8 right-8 z-[2]"
+        onClick={SET_SHOW}
+      >
+        {!show ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18 18 6M6 6l12 12"
+            />
+          </svg>
+        )}
+      </div>
 
       {show ? (
-        <div className="bg-white col-start-1 col-end-3 h-screen px-[24px] pt-[37px] pb-[67px] flex flex-col justify-between fixed">
+        <div className="bg-white col-start-1 col-end-3 h-screen px-[24px] pt-[37px] pb-[67px] flex flex-col justify-between fixed z-[1] md:hidden">
           <div>
             <ul className="mb-[64px]">
               <li className="flex items-end justify-center">
                 <img src={setting} role="presentation" />
-                <span className="text-black text-[26px] ml-[8px] me-[4px] hidden min-[1600px]:block">
+                <span className="text-black text-[26px] ml-[8px] me-[4px] ">
                   Dashboard
                 </span>
-                <span className="text-[#838383] text-[10px] mb-[6px] hidden min-[1600px]:block">
+                <span className="text-[#838383] text-[10px] mb-[6px] ">
                   v.01
                 </span>
               </li>
@@ -96,14 +98,8 @@ export default function Dashboard() {
             <ul className="flex flex-col gap-[17px]">
               <li className="flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer">
                 <div className="flex">
-                  <img
-                    src={key}
-                    role="presentation"
-                    className="mr-0 min-[1600px]:mr-[15.25px]"
-                  />
-                  <span className="text-[#9197B3] text-[14px] hidden min-[1600px]:block">
-                    Dashboard
-                  </span>
+                  <img src={key} role="presentation" className="mr-[15.25px]" />
+                  <span className="text-[#9197B3] text-[14px] ">Dashboard</span>
                 </div>
               </li>
               <li className="flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer">
@@ -111,33 +107,29 @@ export default function Dashboard() {
                   <img
                     src={threed}
                     role="presentation"
-                    className="mr-0 min-[1600px]:mr-[15.25px]"
+                    className="mr-[15.25px]"
                   />
-                  <span className="text-[#9197B3] text-[14px] hidden min-[1600px]:block">
-                    Product
-                  </span>
+                  <span className="text-[#9197B3] text-[14px] ">Product</span>
                 </div>
                 <img
                   src={angle}
                   role="presentation"
-                  className="mr-0 min-[1600px]:mr-[15.25px] hidden min-[1600px]:block"
+                  className="mr-[15.25px] "
                 />
               </li>
-              <li className="bg-[#5932EA] flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer w-fit min-[1600px]:w-auto">
+              <li className="bg-[#5932EA] flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer w-auto">
                 <div className="flex items-center">
                   <img
                     src={user}
                     role="presentation"
-                    className="mr-0 min-[1600px]:mr-[15.25px]"
+                    className="mr-[15.25px]"
                   />
-                  <span className="text-white text-[14px] hidden min-[1600px]:block">
-                    Customers
-                  </span>
+                  <span className="text-white text-[14px] ">Customers</span>
                 </div>
                 <img
                   src={anglewhite}
                   role="presentation"
-                  className="mr-0 min-[1600px]:mr-[15.25px] hidden min-[1600px]:block"
+                  className="mr-[15.25px] "
                 />
               </li>
               <li className="flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer">
@@ -145,16 +137,14 @@ export default function Dashboard() {
                   <img
                     src={wallet}
                     role="presentation"
-                    className="mr-0 min-[1600px]:mr-[15.25px]"
+                    className="mr-[15.25px]"
                   />
-                  <span className="text-[#9197B3] text-[14px] hidden min-[1600px]:block">
-                    Income
-                  </span>
+                  <span className="text-[#9197B3] text-[14px] ">Income</span>
                 </div>
                 <img
                   src={angle}
                   role="presentation"
-                  className="mr-0 min-[1600px]:mr-[15.25px] hidden min-[1600px]:block"
+                  className="mr-[15.25px] "
                 />
               </li>
               <li className="flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer">
@@ -162,16 +152,14 @@ export default function Dashboard() {
                   <img
                     src={discount}
                     role="presentation"
-                    className="mr-0 min-[1600px]:mr-[15.25px]"
+                    className="mr-[15.25px]"
                   />
-                  <span className="text-[#9197B3] text-[14px] hidden min-[1600px]:block">
-                    Promote
-                  </span>
+                  <span className="text-[#9197B3] text-[14px] ">Promote</span>
                 </div>
                 <img
                   src={angle}
                   role="presentation"
-                  className="mr-0 min-[1600px]:mr-[15.25px] hidden min-[1600px]:block"
+                  className="mr-[15.25px] "
                 />
               </li>
               <li className="flex justify-between items-center p-[11px] rounded-[8px] cursor-pointer">
@@ -179,22 +167,20 @@ export default function Dashboard() {
                   <img
                     src={message}
                     role="presentation"
-                    className="mr-0 min-[1600px]:mr-[15.25px]"
+                    className="mr-[15.25px]"
                   />
-                  <span className="text-[#9197B3] text-[14px] hidden min-[1600px]:block">
-                    Help
-                  </span>
+                  <span className="text-[#9197B3] text-[14px] ">Help</span>
                 </div>
                 <img
                   src={angle}
                   role="presentation"
-                  className="mr-0 min-[1600px]:mr-[15.25px] hidden min-[1600px]:block"
+                  className="mr-[15.25px] "
                 />
               </li>
             </ul>
           </div>
           <div>
-            <div className="mb-[46px] rounded-[20px] bg-gradient-to-r from-[#EAABF0] to-[#4623E9] pl-[33px] pr-[34px] pt-[26px] pb-[22px] hidden min-[1600px]:block">
+            <div className="mb-[46px] rounded-[20px] bg-gradient-to-r from-[#EAABF0] to-[#4623E9] pl-[33px] pr-[34px] pt-[26px] pb-[22px] ">
               <p className="text-center text-white text-[14px] w-[183px] font-semibold">
                 Upgrade to PRO to get access all Features!
               </p>
@@ -205,16 +191,12 @@ export default function Dashboard() {
             <div className="flex justify-between items-center">
               <div className="flex gap-[12px]">
                 <img src={evano} alt="" />
-                <div className="hidden min-[1600px]:flex flex-col">
+                <div className="flex flex-col">
                   <p className="text-black text-[14px] font-bold">Evano</p>
                   <p className="text-[#757575] text-[12px]">Project Manager</p>
                 </div>
               </div>
-              <img
-                src={down}
-                alt="drop down"
-                className="hidden min-[1600px]:block"
-              />
+              <img src={down} alt="drop down" className="" />
             </div>
           </div>
         </div>
@@ -224,8 +206,8 @@ export default function Dashboard() {
       <div className="bg-white col-start-1 col-end-1 min-[1600px]:col-end-3 h-screen px-[24px] pt-[37px] pb-[67px] hidden min-[820px]:flex flex-col justify-between fixed">
         <div>
           <ul className="mb-[64px]">
-            <li className="flex items-end justify-center">
-              <img src={setting} role="presentation" />
+            <li className="flex items-end justify-center min-[1600px]:justify-start">
+              <img src={setting} role="presentation" className="ms-0 min-[1600px]:ms-[9px]"/>
               <span className="text-black text-[26px] ml-[8px] me-[4px] hidden min-[1600px]:block">
                 Dashboard
               </span>
@@ -351,7 +333,11 @@ export default function Dashboard() {
                 <p className="text-[#757575] text-[12px]">Project Manager</p>
               </div>
             </div>
-            <img src={down} alt="drop down" className="hidden min-[1600px]:block" />
+            <img
+              src={down}
+              alt="drop down"
+              className="hidden min-[1600px]:block"
+            />
           </div>
         </div>
       </div>
@@ -372,7 +358,7 @@ export default function Dashboard() {
             />
           </div>
         </div>
-        <div className="bg-white shadow-lg shadow-[#E2ECF980] rounded-[20px] pt-[31px] pb-[33px] pl-[10px] min-[1030px]:pl-[50px] pr-[10px] min-[1030px]:pr-[64.2px] flex flex-col min-[1030px]:flex-row justify-between mt-[39px] mb-[40px]">
+        <div className="bg-white shadow-lg shadow-[#E2ECF980] rounded-[20px] pt-[31px] pb-[33px] pl-[10px] min-[1030px]:pl-[50px] pr-[10px] min-[1030px]:pr-[64.2px] flex flex-col gap-[20px] min-[1030px]:gap-0 min-[1030px]:flex-row justify-between mt-[39px] mb-[40px]">
           <div className="px-[20px] min-[1330px]:px-[56px]">
             <div className="flex gap-[20px]">
               <img
@@ -384,7 +370,7 @@ export default function Dashboard() {
                 <p className="text-[#ACACAC] text-[14px]">Total Customers</p>
                 <p className="text-[#333333] text-[32px] font-[600]">5,423</p>
                 <p className="flex">
-                  <img  
+                  <img
                     src={greenArrow}
                     role="presentation"
                     className="mr-[3px] hidden min-[1020px]:block"
@@ -395,7 +381,7 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="border-l border-r border-l-[#F0F0F0] border-r-[#F0F0F0] px-[20px] min-[1330px]:px-[56px]">
+          <div className="min-[1030px]:border-l min-[1030px]:border-r border-l-[#F0F0F0] border-r-[#F0F0F0] px-[20px] min-[1330px]:px-[56px]">
             <div className="flex gap-[20px]">
               <img
                 src={dashboard2}
@@ -462,7 +448,7 @@ export default function Dashboard() {
               </p>
               <p className="text-[#16C098] text-[14px]">Active Members</p>
             </div>
-            <div className="flex gap-[16px] flex-col min-[940px]:flex-row w-fit min-[940px]:w-full mt-[16px] min-[940px]:mt-0">
+            <div className="flex gap-[16px] flex-col min-[940px]:flex-row max-[940px]:w-full mt-[16px] min-[940px]:mt-0">
               <div className="flex items-center gap-[11px] has-[:focus]:border has-[:focus]:border-[#5932EA] px-[12px] py-[16px] rounded-[12px] bg-[#F9FBFF]">
                 <label htmlFor="search">
                   <img src={search} alt="search" />

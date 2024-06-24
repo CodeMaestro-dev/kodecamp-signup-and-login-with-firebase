@@ -17,7 +17,7 @@ export default function Signup() {
   const [errorEmail, setErrorEmail] = useState("");
   const [errorPassword, setErrorPassword] = useState("");
 
-  const NAVIGATE = useNavigate()
+  const NAVIGATE = useNavigate();
 
   useEffect(() => {
     if (TOKEN) {
@@ -47,12 +47,8 @@ export default function Signup() {
       setErrorPassword("");
 
       createUserWithEmailAndPassword(auth, email, password)
-        .then((res) => {
+        .then(() => {
           setPage(page + 1);
-          localStorage.setItem(
-            "authToken",
-            res.user.proactiveRefresh.user.accessToken
-          );
         })
         .catch((error) => {
           setErrorEmail("User already exists. Consider Login in.");
@@ -65,11 +61,11 @@ export default function Signup() {
   if (page === 0) {
     return (
       <Page1
-        handleSubmit={handleSubmit}
         setEmail={setEmail}
         setPassword={setPassword}
         errorEmail={errorEmail}
         errorPassword={errorPassword}
+        handlePagination={handlePagination}
       />
     );
   } else if (page === 1) {
@@ -77,7 +73,7 @@ export default function Signup() {
   } else if (page === 2) {
     return <Page3 handlePagination={handlePagination} />;
   } else if (page === 3) {
-    return <Page4 handlePagination={handlePagination} />;
+    return <Page4 handleSubmit={handleSubmit} />;
   } else if (page === 4) {
     return <Page5 handlePagination={handlePagination} />;
   }

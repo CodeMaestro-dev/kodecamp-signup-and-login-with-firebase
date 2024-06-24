@@ -9,7 +9,7 @@ import tick from "/assets/icons/tick.svg";
 import show_password from "/assets/icons/show.svg";
 
 export default function Page1({
-  handleSubmit,
+  handlePagination,
   setEmail,
   setPassword,
   errorEmail,
@@ -59,7 +59,7 @@ export default function Page1({
         <p className="text-[#1A071066] text-[13px] self-start">
           or register with email?
         </p>
-        <form className="flex flex-col w-full" onSubmit={handleSubmit}>
+        <form className="flex flex-col w-full" onSubmit={handlePagination}>
           <div className="has-[:focus]:border has-[:focus]:border-[#5932EA] my-[20px] px-[12px] py-[6px] rounded-[12px] flex flex-col border border-[#DDDDDD]">
             <label htmlFor="email" className="text-[13px]">
               Email adress
@@ -68,7 +68,7 @@ export default function Page1({
               type="email"
               id="email"
               placeholder="example@mail.com"
-              className="w-full focus:outline-none text-black placeholder:text-black"
+              className="w-full focus:outline-none text-black placeholder:text-[#1A0710A6]"
               onInput={(e) => setEmail(e.target.value)}
               required
             />
@@ -83,7 +83,7 @@ export default function Page1({
                 type={show ? "text" : "password"}
                 id="password"
                 placeholder="********"
-                className="w-full focus:border-none focus:outline-none text-black placeholder:text-black"
+                className="w-full focus:border-none focus:outline-none text-black placeholder:text-[#1A0710A6]"
                 onInput={(e) => setPassword(e.target.value)}
                 required
               />

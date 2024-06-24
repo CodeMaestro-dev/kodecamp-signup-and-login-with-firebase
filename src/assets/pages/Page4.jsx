@@ -1,6 +1,6 @@
 import cancel from "/assets/icons/cancel.svg";
 
-export default function Page4({ handlePagination }) {
+export default function Page4({ handleSubmit }) {
   return (
     <div className="px-[10px] md:px-[44px] pt-[46px] pb-[24px] overflow-hidden bg-white col-start-1 col-end-12 md:col-start-3 md:col-end-10 lg:col-start-5 lg:col-end-8 w-full rounded-[24px] shadow-lg">
       <div className="flex items-center justify-between">
@@ -8,14 +8,14 @@ export default function Page4({ handlePagination }) {
           Add address
           <span className="text-[#6BC62D] ml-[24px]">3 of 3</span>
         </h2>
-        <div>
+        <div>   
           <img src={cancel} alt="cancel modal" />
         </div>
       </div>
       <div className="flex flex-col items-center justify-center mt-[56px]">
         <form
           className="flex flex-col w-full gap-[20px]"
-          onSubmit={handlePagination}
+          onSubmit={handleSubmit}
         >
           <div className="has-[:focus]:border has-[:focus]:border-[#5932EA] px-[12px] py-[6px] rounded-[12px] flex flex-col border border-[#DDDDDD]">
             <label htmlFor="street-address" className="text-[13px]">
@@ -68,7 +68,7 @@ export default function Page4({ handlePagination }) {
                 Zip Code
               </label>
               <input
-                type="text"
+                type="number"
                 id="zip-code"
                 placeholder="1123"
                 className="w-full focus:outline-none text-black"

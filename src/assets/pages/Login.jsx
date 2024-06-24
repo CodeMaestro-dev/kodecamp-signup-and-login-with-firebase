@@ -113,7 +113,7 @@ export default function Login() {
               type="email"
               id="email"
               placeholder="example@mail.com"
-              className="w-full focus:outline-none placeholder:text-black text-black"
+              className="w-full focus:outline-none placeholder:text-[#1A0710A6] text-black"
               onInput={(e) => setEmail(e.target.value)}
               required
             />
@@ -128,7 +128,7 @@ export default function Login() {
                 type={show ? "text" : "password"}
                 id="password"
                 placeholder="********"
-                className="w-full focus:border-none focus:outline-none text-black placeholder:text-black"
+                className="w-full focus:border-none focus:outline-none text-black placeholder:text-[#1A0710A6]"
                 onInput={(e) => setPassword(e.target.value)}
                 required
               />
